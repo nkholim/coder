@@ -1,0 +1,427 @@
+* {
+  font-family: "Montserrat";
+  box-sizing: border-box;
+  /* spy scrollong smooth */
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#header {
+  display: flex;
+  background-color: #ffc108;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 128px;
+  /* header tetatp reserve dan tidak akan tescroll */
+  position: sticky;
+  top: 0px;
+  z-index: 5;
+}
+
+/* membuat animasi h1 (Coder) dg nama flash selama 1s terus menerus (infinite)*/
+#header h1 {
+  margin: 0;
+  /* animation: flash 2s infinite; */
+  animation: bounceIn 3s;
+}
+
+@keyframes flash {
+  from {
+    /* filter: opacity(0); */
+    transform: scale(1);
+  }
+  to {
+    /* filter: opacity(1); */
+    transform: scale(1.5);
+  }
+}
+
+/* animasi loncat2 */
+@keyframes bounceIn {
+  0% {
+    filter: opacity(0);
+    transform: translateY(-20px);
+  }
+  35% {
+    filter: opacity(0.25);
+    transform: translateY(0);
+  }
+  70% {
+    filter: opacity(0.5);
+    transform: translateY(-10px);
+  }
+  100% {
+    filter: opacity(1);
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 48px;
+  margin: 0 0 16px 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+a:hover {
+  color: white;
+}
+
+p {
+  color: #979797;
+  margin: 0 0 16px 0;
+  font-size: 24px;
+}
+
+section {
+  padding: 64px 128px;
+}
+
+img iframe {
+  width: 100%;
+}
+
+/* section 1 */
+#landing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 16px;
+}
+
+#landing p {
+  margin-bottom: 32px;
+}
+
+#landing > div {
+  width: 50%;
+}
+
+/* section 2 */
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 16px;
+}
+
+#about > div {
+  width: 50%;
+}
+
+#about-stats {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* penyederhanaan */
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  margin-top: 72px;
+}
+
+.about-stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* garis kuning */
+.about-stats-item div {
+  width: 50px;
+  height: 10px;
+  background-color: #ffc108;
+  margin-bottom: 16px;
+}
+
+/* .btn {
+    background-color: #FFC108;
+    color: white;
+    padding: 8px 24px;
+}
+
+.btn-alt {
+    background-color: white;
+    color: black;
+    margin-right: 16px;
+    border: 2px solid #FFC108;
+} */
+
+.btn {
+  background-color: white;
+  color: black;
+  border: 2px solid #ffc108;
+  padding: 8px 24px;
+}
+
+.btn ~ .btn {
+  background-color: #ffc108;
+  color: white;
+}
+
+nav > a {
+  margin-left: 12px;
+}
+
+/* spy gambar bisa diposisi header, maka dibuat position relative */
+.service-header h1 {
+  position: relative;
+}
+
+.service-header h1::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background: url("./images/accent1.svg");
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  /* spy gambar dibelakang */
+  z-index: -1;
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* column-gap: 16px; */
+}
+
+.btn-service {
+  border: 2px solid #ffc108;
+  padding: 8px 24px;
+  background-color: #ffc108;
+  color: white;
+}
+.service-detail {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* penyederhanaan */
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  column-gap: 128px;
+  margin-top: 72px;
+}
+
+.service-detail-item:hover {
+  /* saat disentuh, gambar besar 1,5 kali */
+  transform: scale(1.5);
+}
+
+.service-detail-item {
+  box-shadow: 2px 14px 14px gray;
+  /* gambar jadi hitam-putih */
+  /* filter: grayscale(1); */
+  /* filter: opacity(70%); */
+}
+.about-stats-item img {
+  width: 100%;
+}
+
+.about-stats-item h2 {
+  padding: 0 16px;
+}
+.about-stats-item p {
+  font-size: 16px;
+  padding: 0 16px;
+}
+
+#contact h1 {
+  position: relative;
+}
+
+/* tanda > hanya nambah pseudo class di bawahnya 1 tingkat */
+#contact > h1::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background: url("./images/accent2.svg");
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  /* spy gambar dibelakang */
+  z-index: -1;
+}
+
+.contact-detail {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  margin-top: 72px;
+  column-gap: 32px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid rgb(255, 196, 0);
+  padding: 64px 32px;
+}
+
+form:hover {
+  cursor: pointer;
+}
+
+.contact-detail > div,
+.contact-detail > form {
+  width: 50%;
+}
+form h1 {
+  font-size: 32px;
+  text-align: center;
+}
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
+  margin-top: 32px;
+  grid-template-areas:
+    "name    subject"
+    "email   phone"
+    "message message";
+}
+
+#input-name {
+  grid-area: name;
+}
+
+#input-subject {
+  grid-area: subject;
+}
+
+#input-email {
+  grid-area: email;
+}
+
+#input-phone {
+  grid-area: phone;
+}
+#input-subject {
+  grid-area: subject;
+}
+
+.input-group input:focus {
+  border-bottom: 2px solid #ffc108;
+}
+
+.btn-contact {
+  border: 2px solid #ffc108;
+  padding: 8px 24px;
+  background-color: #ffc108;
+  color: white;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.input-group label {
+  font-weight: 700;
+  margin-bottom: 100px;
+  font-size: 24px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+}
+
+footer {
+  padding: 16px 128px;
+  background-color: #ffc108;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110px;
+}
+
+footer p {
+  color: white;
+  width: 70%;
+  font-size: 18px;
+}
+
+.social-icon {
+  display: flex;
+  gap: 32px;
+}
+
+/* Media query utk buat html responsive dg max width 1200*/
+@media only screen and (max-width: 1200px) {
+  .service-detail {
+    gap: 24px;
+  }
+  .contact-detail {
+    gap: 24px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* Media query utk buat html responsive */
+@media only screen and (max-width: 992px) {
+  /* html,
+  body {
+    background-color: red;
+  } */
+  #header,
+  #footer {
+    padding: 16px 32px;
+  }
+
+  section {
+    padding: 64px 32px;
+  }
+
+  #landing {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #landing > div {
+    width: 100%;
+  }
+
+  #about {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #about > div {
+    width: 100%;
+  }
+
+  .service-detail {
+    gap: 16px;
+  }
+
+  .contact-detail {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    row-gap: 64px;
+  }
+  .contact-detail form,
+  .contact-detail > div {
+    width: 100%;
+  }
+}
