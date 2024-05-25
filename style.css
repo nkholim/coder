@@ -339,19 +339,19 @@ form h1 {
 }
 
 footer {
-  padding: 16px 128px;
+  padding: 8px 128px;
   background-color: #ffc108;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 110px;
+  height: 160px;
 }
 
 footer p {
   color: white;
   width: 70%;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .social-icon {
